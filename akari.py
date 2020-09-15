@@ -19,6 +19,10 @@ media = api.UploadMediaChunked(media = 'AkariBraincells.mp4', additional_owners 
 medialist = [media]
 media0 = api.UploadMediaChunked(media = 'AkariBraincells.mp4', additional_owners = None)
 medialist0 = [media0]
+media1 = api.UploadMediaChunked(media = 'AkariBraincells.mp4', additional_owners = None)
+medialist1 = [media1]
+media2 = api.UploadMediaChunked(media = 'AkariBraincells.mp4', additional_owners = None)
+medialist2 = [media2]
 
 def postAkari(medialist):
     api2.update_status(status = '', media_ids = medialist)
@@ -26,6 +30,10 @@ def postAkari(medialist):
 
 while True:
     postAkari(medialist)
-    time.sleep(10)
+    time.sleep(21600)
     postAkari(medialist0)
-    time.sleep(10)
+    time.sleep(21600)
+    postAkari(medialist1)
+    time.sleep(21600)
+    postAkari(medialist2)
+    time.sleep(21600)
