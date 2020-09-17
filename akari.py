@@ -1,6 +1,7 @@
 import twitter
 import tweepy
 import time
+import random
 import os
 from os import environ
 
@@ -15,30 +16,11 @@ auth.set_access_token(key, secret)
 api2 = tweepy.API(auth)
 api = twitter.Api(consumer_key= consumer_key, consumer_secret= consumer_secret, access_token_key = key, access_token_secret = secret)
 
-media = api.UploadMediaChunked(media = 'AkariBraincells.mp4', additional_owners = None)
-medialist = [media]
-media0 = api.UploadMediaChunked(media = 'AkariBraincells.mp4', additional_owners = None)
-medialist0 = [media0]
-media1 = api.UploadMediaChunked(media = 'AkariBraincells.mp4', additional_owners = None)
-medialist1 = [media1]
-media2 = api.UploadMediaChunked(media = 'AkariBraincells.mp4', additional_owners = None)
-medialist2 = [media2]
-media3 = api.UploadMediaChunked(media = 'AkariBraincells.mp4', additional_owners = None)
-medialist3 = [media3]
-
-def postAkari(medialist):
+def postAkari():
+    medialist = [api.UploadMediaChunked(media = 'AkariBraincells.mp4', additional_owners = None)]
     api2.update_status(status = '', media_ids = medialist)
 
-
 while True:
-    postAkari(medialist)
-    time.sleep(21600)
-    postAkari(medialist0)
-    time.sleep(21600)
-    postAkari(medialist1)
-    time.sleep(21600)
-    postAkari(medialist2)
-    time.sleep(21600)
-    postAkari(medialist3)
-    time.sleep(21600)
-    
+    random24Hours = random.randint(1, 43200)
+    postAkari()
+    time.sleep(43200 + random24Hours)
